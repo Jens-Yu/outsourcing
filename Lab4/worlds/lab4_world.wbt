@@ -1,0 +1,62 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/factory/containers/protos/WoodenBox.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.31327544699977694 0.37926741700987415 0.8706404083786533 1.5181971566024879
+  position -1.0618638173813624 -5.655519914384391 5.351080441207828
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 6 6
+  floorTileSize 0.2 0.2
+  wallHeight 0.4
+}
+Pioneer3dx {
+  controller "my_lab5_controller"
+  supervisor TRUE
+  extensionSlot [
+    Camera {
+      translation 0 0 0.21
+    }
+    Display {
+      name "sensor_display"
+      width 500
+      height 500
+    }
+  ]
+}
+WoodenBox {
+  translation -0.95 1.55 0.25
+  rotation 0 0 1 0.5
+}
+WoodenBox {
+  translation -1.05 0.15 0.25
+  name "wooden box(1)"
+}
+WoodenBox {
+  translation -1.05 -0.35 0.25
+  name "wooden box(2)"
+}
+WoodenBox {
+  translation -1.05 -0.85 0.25
+  name "wooden box(3)"
+}
+WoodenBox {
+  translation 1.35 0.85 0.25
+  rotation 0 0 1 0.6
+  name "wooden box(4)"
+}
+WoodenBox {
+  translation -0.05 -1.55 0.25
+  name "wooden box(5)"
+}

@@ -1,0 +1,67 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/balls/protos/Ball.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.10368318149886205 0.13076733829378542 0.9859765215814384 1.354572020694604
+  position -0.6714207127183254 -4.557674272499114 1.2177279613188967
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 10 10
+  wallHeight 0.3
+}
+Solid {
+  translation 1 0 1
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Sphere {
+        radius 0.1
+      }
+    }
+  ]
+  boundingObject Sphere {
+    radius 0.1
+  }
+  physics Physics {
+  }
+}
+WoodenBox {
+  translation -1.85674 -3.00391 0.3
+  rotation 0 0 -1 -2.523605307179586
+}
+WoodenBox {
+  translation -2.16389 1.43263 0.3
+  rotation 0 0 -1 -2.523605307179586
+  name "wooden box(3)"
+}
+WoodenBox {
+  translation 3.00336 1.9579 0.3
+  rotation 0 0 -1 -2.523605307179586
+  name "wooden box(1)"
+}
+WoodenBox {
+  translation 1.22798 -1.40477 0.3
+  rotation 0 0 -1 -2.523605307179586
+  name "wooden box(2)"
+}
+E-puck {
+  translation -1.6450047933696132 1.0193312597828683 -6.429296716172969e-05
+  rotation 0.0009516962310108109 -0.0032212065931008756 0.999994359035274 0.41192207800664515
+  controller "a_controller"
+}
+Ball {
+  translation 0 0 1
+}

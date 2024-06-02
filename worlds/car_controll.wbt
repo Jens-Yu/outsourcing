@@ -1,0 +1,54 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/vehicles/protos/lincoln/LincolnMKZ.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/buildings/protos/Hotel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/buildings/protos/UBuilding.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/buildings/protos/Museum.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.014849786914570362 0.9899115442561933 -0.14090641708918047 0.21212423250758897
+  position -533.8817758025037 1.116273019027883 9.452205263331424
+  follow "vehicle"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+LincolnMKZ {
+  translation -490 -1.63792e-05 -0.00599491
+  rotation -0.00022827760048847943 -0.9999999696611825 9.255793408189918e-05 0.012114986658045317
+  controller "car_forward"
+}
+Solid {
+  children [
+    StraightRoadSegment {
+      translation -500 0 -0.35
+      rightBarrier TRUE
+      leftBarrier TRUE
+      length 1000
+    }
+  ]
+  boundingObject Plane {
+    size 1000 10
+  }
+}
+Floor {
+  translation 0 0 -0.36
+  size 1000 10
+}
+Hotel {
+  translation 0 36.29 0
+}
+UBuilding {
+  translation -10.5882 -39.5162 0
+  rotation 0 0 1 1.5708
+}
+Museum {
+  translation -52.62 -29.28 0
+}

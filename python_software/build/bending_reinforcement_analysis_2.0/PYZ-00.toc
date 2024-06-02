@@ -1,0 +1,2 @@
+('D:\\Programfiles\\outsourcing\\python_software\\build\\bending_reinforcement_analysis_2.0\\PYZ-00.pyz',
+ [])

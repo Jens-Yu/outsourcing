@@ -1,0 +1,196 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/vehicles/protos/lincoln/LincolnMKZ.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/DryMud.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/vehicles/protos/bmw/BmwX5.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.039780925036865235 0.8834237619273291 -0.4668832133043309 0.19230309531319614
+  position -470.55813737199685 8.009936980531084 8.563598874069454
+  follow "vehicle"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+LincolnMKZ {
+  translation -400 2 -0.123692
+  rotation 3.2117612256547177e-07 -0.9999999999999483 -1.1750927824897983e-08 0.04797202245918283
+  controller "overtake_controller"
+  sensorsSlotFront [
+    DEF FRONT_LEFT_0 DistanceSensor {
+      translation -0.3 0.65 0.3
+      rotation 0 0 1 0.13
+      name "distance sensor front left 0"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_1 DistanceSensor {
+      translation -0.3 0.65 0.3
+      rotation 0 0 1 0.26
+      name "distance sensor front left 1"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_2 DistanceSensor {
+      translation -0.3 0.65 0.3
+      rotation 0 0 1 0.393
+      name "distance sensor front left 2"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_0 DistanceSensor {
+      translation -0.3 -0.65 0.3
+      rotation 0 0 -1 0.131
+      name "distance sensor front right 0"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_1 DistanceSensor {
+      translation -0.3 -0.65 0.3
+      rotation 0 0 -1 0.262
+      name "distance sensor front right 1"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_2 DistanceSensor {
+      translation -0.3 -0.65 0.3
+      rotation 0 0 -1 0.393
+      name "distance sensor front right 2"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT DistanceSensor {
+      translation -0.14 0 0.3
+      name "distance sensor front"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+  ]
+  sensorsSlotRear [
+    DEF REAR DistanceSensor {
+      translation 0 0 0.3
+      name "distance sensor rear"
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_RIGHT DistanceSensor {
+      translation -0.2 0.7 0.3
+      rotation 0 0 1 0.5
+      name "distance sensor rear right"
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_LEFT DistanceSensor {
+      translation -0.2 -0.7 0.3
+      rotation 0 0 -1 0.5
+      name "distance sensor rear left"
+      numberOfRays 2
+      aperture 0.2
+    }
+  ]
+  sensorsSlotTop [
+    DEF TOP_CAMERA Camera {
+      translation 0.48 0 0
+      width 512
+      height 256
+      near 1
+      far 1000
+      motionBlur 200
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+  ]
+  sensorsSlotCenter [
+    DEF RIGHT DistanceSensor {
+      translation 1.32 -0.9 0.3
+      rotation 0 0 1 -1.57
+      name "distance sensor right"
+      lookupTable [
+        0 0 0
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.9
+    }
+    DEF LEFT DistanceSensor {
+      translation 1.32 0.9 0.3
+      rotation 0 0 1 1.57
+      name "distance sensor left"
+      lookupTable [
+        0 0 0
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.9
+    }
+    GPS {
+      translation 2 0 0.5
+    }
+  ]
+}
+BmwX5 {
+  translation -350 2 0
+  name "vehicle(1)"
+  controller "car_forward"
+}
+Floor {
+  size 1 1
+}
+Solid {
+  translation 0 0 -0.4
+  children [
+    StraightRoadSegment {
+      translation -500 0 0.01
+      width 16
+      numberOfLanes 4
+      numberOfForwardLanes 4
+      rightBarrier TRUE
+      leftBarrier TRUE
+      length 1000
+    }
+    Shape {
+      appearance DryMud {
+      }
+      geometry Plane {
+        size 1000 1000
+      }
+    }
+  ]
+}

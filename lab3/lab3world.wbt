@@ -1,0 +1,34 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.46690109005227387 0.505198050367999 0.7257949448793175 1.8101388192712655
+  position -0.33364161430194905 -3.984837426791943 8.457522894122496
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 4 4
+  wallHeight 0.4
+}
+Pioneer3dx {
+  translation -0.4999880070446534 -1.0000000179100363 0.09481477987224803
+  rotation -4.145800933682083e-07 -0.9999999998444528 1.763300288427338e-05 0.034623657967048124
+  controller "deadreckoning_controller"
+  supervisor TRUE
+  extensionSlot [
+    Display {
+      name "odometryDisplay"
+      width 300
+      height 128
+    }
+  ]
+}

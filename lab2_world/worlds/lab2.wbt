@@ -1,0 +1,26 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/robots/adept/pioneer3/protos/Pioneer3dx.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.32070725565941716 0.33006436946579587 0.8878087452692455 1.660922890504922
+  position -0.03859867068671834 -5.080339650981234 4.172359206203833
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 4 4
+  wallHeight 0.4
+}
+Pioneer3dx {
+  translation -0.5 -1 0.0975
+  rotation -2.4444521835775534e-07 -0.999999999992405 -3.8897970293726315e-06 0.03473326832606088
+  controller "drive_controller"
+}

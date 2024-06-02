@@ -1,0 +1,1097 @@
+#VRML_SIM R2022b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/vehicles/protos/lincoln/LincolnMKZ.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/appearances/protos/DryMud.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/road/protos/StraightRoadSegment.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/devices/ibeo/protos/IbeoLux.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/vehicles/protos/bmw/BmwX5.proto"
+
+WorldInfo {
+  info [
+    ""
+    ""
+  ]
+  title "car_drive"
+  ERP 0
+  basicTimeStep 10
+  lineScale 1
+}
+Viewpoint {
+  orientation 0.06892925719973901 0.686993396869175 -0.7233870541833357 0.2756438173508269
+  position -415.10762729629255 1.4800691774792283 2.924760309569016
+  follow "vehicle"
+  lensFlare LensFlare {
+  }
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+LincolnMKZ {
+  hidden position_0_0 -7.777610174003357e-08
+  hidden position2_0_0 36.899370017129556
+  hidden position_0_1 7.908903200494652e-06
+  hidden position2_0_1 36.899369421266684
+  hidden position_0_2 36.89785117983059
+  hidden position_0_3 36.89785057232891
+  hidden linearVelocity_0 12.066264547244218 -3.919823276150629e-05 -0.02842026843557106
+  hidden angularVelocity_0 -1.0238493611444336e-05 -0.02440186899462795 -1.1053478742676133e-05
+  hidden rotation_1 0.999999999999995 3.8888050870016604e-08 9.201200279367332e-08 0.7997418259479664
+  hidden linearVelocity_1 12.098693180252832 -5.888547202478472e-05 0.003926865970121976
+  hidden angularVelocity_1 0.00016893762821022844 33.84045180601896 -0.00022827157872414055
+  hidden rotation_2 -0.999999999948409 3.9544516000639245e-06 -9.356517007752365e-06 0.7997424218478351
+  hidden linearVelocity_2 12.098686169869051 -6.34718180681045e-05 0.003938000427431609
+  hidden angularVelocity_2 0.00018814358628228004 33.840447812037965 -0.0001477972607983246
+  hidden rotation_3 0.9999999999999999 0 0 0.80126066324693
+  hidden linearVelocity_3 12.099153671480572 -4.8249755119309846e-05 -0.04913004866777333
+  hidden angularVelocity_3 0.00016878995488248921 33.84071419796379 -0.00012694594735331
+  hidden rotation_4 -1 0 0 0.8012612707486054
+  hidden linearVelocity_4 12.099146661230392 6.4549490866578695e-06 -0.04911891384745503
+  hidden angularVelocity_4 -6.045083970168033e-05 33.84071020407957 -0.00013176026876096327
+  translation -387.0161853273875 -2.0000042027142824 0.15406401040632262
+  rotation -0.00020551026486774794 -0.9999999727552006 -0.00011070288693782377 0.017625885998928722
+  controller "overtake_controller"
+  sensorsSlotFront [
+    Robot {
+      translation 0.11 0 0
+      children [
+        DEF radar Radar {
+          maxRange 60
+          horizontalFieldOfView 0.9
+          verticalFieldOfView 0.0785
+          minRadialSpeed -100
+          maxRadialSpeed 40
+          cellDistance 2
+          rangeNoise 0.25
+          speedNoise 0.12
+          angularNoise 0.001
+          frequency 76.5
+          transmittedPower 31
+          minDetectableSignal -80
+          occlusion TRUE
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 42.04589664654932 -0.09520468477361758 -0.5
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.4658114415598708 0 0.5341885584401291
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+        Transform {
+          translation 0 0 -10
+          children [
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor 0.8 0 0.0117647
+                  transparency 0.7
+                }
+              }
+              geometry Box {
+                size 5 2.5 2
+              }
+            }
+          ]
+        }
+      ]
+      controller "radar_target_tracker1"
+      supervisor TRUE
+    }
+    DEF FRONT_RIGHT_0 DistanceSensor {
+      translation -0.3 0.65 0.3
+      rotation 0 0 1 0.13
+      name "distance sensor front right 0"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_1 DistanceSensor {
+      translation -0.3 0.65 0.3
+      rotation 0 0 1 0.26
+      name "distance sensor front right 1"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_RIGHT_2 DistanceSensor {
+      translation -0.3 0.65 0.3
+      rotation 0 0 1 0.393
+      name "distance sensor front right 2"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_0 DistanceSensor {
+      translation -0.3 -0.65 0.3
+      rotation 0 0 -1 0.131
+      name "distance sensor front left 0"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_1 DistanceSensor {
+      translation -0.3 -0.65 0.3
+      rotation 0 0 -1 0.262
+      name "distance sensor front left 1"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_2 DistanceSensor {
+      translation -0.3 -0.65 0.3
+      rotation 0 0 -1 0.393
+      name "distance sensor front left 2"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT DistanceSensor {
+      translation -0.14 0 0.3
+      name "distance sensor front"
+      lookupTable [
+        0 0 0
+        20 20 0
+      ]
+      numberOfRays 2
+      aperture 0.1
+    }
+    DEF FRONT_LEFT_LIDAR IbeoLux {
+      translation -0.225 -0.71 0
+      rotation 0 0 -1 0.785
+      name "ibeo 2"
+      useExtendedFieldOfView TRUE
+    }
+    DEF FRONT_RIGHT_LIDAR IbeoLux {
+      translation -0.225 0.71 0
+      rotation 0 0 1 0.785
+      name "ibeo 1"
+      useExtendedFieldOfView TRUE
+    }
+  ]
+  sensorsSlotRear [
+    DEF REAR_LEFT_LIDAR IbeoLux {
+      translation -0.164545 0.745 0
+      rotation 0 0 1 0.722
+      name "ibeo 3"
+      useExtendedFieldOfView TRUE
+    }
+    DEF REAR_RIGHT_LIDAR IbeoLux {
+      translation -0.189857 -0.75851 0
+      rotation 0 0 1 -0.791595
+      name "ibeo 4"
+      useExtendedFieldOfView TRUE
+    }
+    DEF REAR DistanceSensor {
+      translation 0 0 0.3
+      name "distance sensor rear"
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_LEFT DistanceSensor {
+      translation -0.2 0.7 0.3
+      rotation 0 0 1 0.5
+      name "distance sensor rear left"
+      numberOfRays 2
+      aperture 0.2
+    }
+    DEF REAR_RIGHT DistanceSensor {
+      translation -0.2 -0.7 0.3
+      rotation 0 0 -1 0.5
+      name "distance sensor rear right"
+      numberOfRays 2
+      aperture 0.2
+    }
+  ]
+  sensorsSlotTop [
+    DEF TOP_CAMERA Camera {
+      translation 0.48 0 0
+      width 512
+      height 256
+      near 1
+      far 1000
+      motionBlur 200
+      recognition Recognition {
+      }
+      lensFlare LensFlare {
+      }
+    }
+  ]
+  sensorsSlotCenter [
+    DEF RIGHT DistanceSensor {
+      translation 1.32 -0.9 0.3
+      rotation 0 0 1 -1.57
+      name "distance sensor right"
+      lookupTable [
+        0 0 0
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.9
+    }
+    DEF LEFT DistanceSensor {
+      translation 1.32 0.9 0.3
+      rotation 0 0 1 1.57
+      name "distance sensor left"
+      lookupTable [
+        0 0 0
+        4 4 0
+      ]
+      numberOfRays 2
+      aperture 0.9
+    }
+    GPS {
+      translation 2 0 0.5
+    }
+  ]
+}
+BmwX5 {
+  hidden position_0_0 -4.257410002785373e-06
+  hidden position2_0_0 25.296358277002685
+  hidden position_0_1 4.255542513519096e-06
+  hidden position2_0_1 25.29635827622815
+  hidden position_0_2 19.478446073749712
+  hidden position_0_3 19.478446087697137
+  hidden position_0_9 0.6223867996601846
+  hidden linearVelocity_0 7.2000515801949545 2.9594000485692378e-08 0.008195724050095936
+  hidden angularVelocity_0 -4.044244207897563e-09 0.01436484340964103 4.701124137255739e-09
+  hidden rotation_1 -0.9999999996607085 -2.1287050006736504e-06 2.5962502332883646e-05 0.16361704833960314
+  hidden linearVelocity_1 7.23961385132758 2.913279024581471e-06 -0.012210318767399865
+  hidden angularVelocity_1 -1.1634690977091051e-05 23.128873283804484 -4.2759783165067765e-05
+  hidden rotation_2 0.9999999996610062 -2.127771256041458e-06 -2.5951114148749924e-05 0.16361704756502446
+  hidden linearVelocity_2 7.239613861133895 -2.8377917984614964e-06 -0.012210313973442355
+  hidden angularVelocity_2 1.143208757545298e-05 23.128873282986874 4.2977481267531936e-05
+  hidden rotation_3 1 0 0 5.654295154968634
+  hidden linearVelocity_3 7.196881034564788 -1.607664379656923e-05 0.019284847302085857
+  hidden angularVelocity_3 6.451311959824843e-05 19.24087182208605 1.4304271118610366e-06
+  hidden rotation_4 -1 0 0 5.654295141021209
+  hidden linearVelocity_4 7.196881042183229 1.6125521158731383e-05 0.01928485202674337
+  hidden angularVelocity_4 -6.464692396337662e-05 19.240871842452815 -1.232024275921471e-06
+  hidden translation_20 0.04814925223296962 1.252039156787379 0.054045079037007615
+  hidden rotation_20 0.7466598432279096 0 -0.6652060421485012 0.6223867996601843
+  translation -342.7229570009282 -1.999999989689326 0.16906987340665214
+  rotation 2.283617607020789e-07 -0.9999999999999623 1.5268834059875363e-07 0.021545621429291957
+  name "vehicle(1)"
+  controller "car_forward"
+}
+Floor {
+  size 1 1
+}
+Solid {
+  translation 0 0 -0.4
+  children [
+    StraightRoadSegment {
+      translation -500 0 0.01
+      width 16
+      numberOfLanes 4
+      numberOfForwardLanes 4
+      rightBarrier TRUE
+      leftBarrier TRUE
+      length 1000
+    }
+    Shape {
+      appearance DryMud {
+      }
+      geometry Plane {
+        size 1000 1000
+      }
+    }
+  ]
+}
