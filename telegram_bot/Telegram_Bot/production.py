@@ -48,8 +48,10 @@ class Production:
                 quota: float = 0.00,  # 余额
                 start_date: Optional[datetime] = None, 
                 principal: Optional[List[str]] = None, 
-                backstage: Optional[str] = None, 
-                remark: Optional[str] = None, 
+                backstage_link: Optional[str] = None,
+                backstage_account: Optional[str] = None,
+                backstage_password: Optional[str] = None,
+                remark: Optional[str] = None,
                 business_acc: Optional[str] = None,
                 last_update_date: Optional[datetime] = None, 
                 state: State = State.PENDING
@@ -65,7 +67,9 @@ class Production:
                 self.CPT_price = CPT_price
                 self.start_date = start_date if start_date is not None else datetime.today()
                 self.principal = principal if principal is not None else []
-                self.backstage = backstage
+                self.backstage_link = backstage_link
+                self.backstage_account = backstage_account
+                self.backstage_password = backstage_password
                 self.remark = remark
                 self.business_acc = business_acc
                 self.quota = quota
@@ -84,13 +88,17 @@ class Production:
     PRODUCTION_QUOTA,
     PRODUCTION_PRINCIPAL,
     PRODUCTION_START_DATE,
-    PRODUCTION_BACKSTAGE,
+    PRODUCTION_BACKSTAGE_LINK,
+    PRODUCTION_BACKSTAGE_ACCOUNT,
+    PRODUCTION_BACKSTAGE_PASSWORD,
     PRODUCTION_REMARK,
     PRODUCTION_BUSINESS_ACCOUNT,
-    SAVE_PRODUCTION
-) = range(15)
+    SAVE_PRODUCTION,
+    SELECT_PRODUCTION,
+    SELECT_OPERATION,
+    ENTER_AMOUNT
+) = range(20)
 
-SELECT_PRODUCTION, SELECT_OPERATION, ENTER_AMOUNT = range(15, 18)
 
 ############################################################################################创建产品
 async def start_create_production(update: Update, context: CallbackContext) -> int:
@@ -271,30 +279,35 @@ async def principal_button_callback(update: Update, context: CallbackContext) ->
 async def input_production_start_date(update: Update, context: CallbackContext) -> int:
     text = update.message.text
     try:
-        #转换为date格式
+        # 转换为date格式
         start_date = datetime.strptime(text, '%Y-%m-%d')
         context.user_data['start_date'] = start_date
         await update.message.reply_text(
             f"开始日期已设置为: {start_date.strftime('%Y-%m-%d')}"
         )
 
-        await update.message.reply_text("请输入必要的后台数据信息，例如后台链接，账号密码等:")
-
-        return PRODUCTION_BACKSTAGE
+        await update.message.reply_text("请输入后台链接:")
+        return PRODUCTION_BACKSTAGE_LINK
     except ValueError:
-
         # 如果转换失败，通知用户并重新请求输入
         await update.message.reply_text(
             "日期格式不正确，请使用 YYYY-MM-DD 格式重新输入日期。"
         )
         return PRODUCTION_START_DATE
+
+async def input_production_backstage_link(update: Update, context: CallbackContext) -> int:
+    context.user_data['backstage_link'] = update.message.text
+    await update.message.reply_text("请输入后台账号:")
+    return PRODUCTION_BACKSTAGE_ACCOUNT
+
+async def input_production_backstage_account(update: Update, context: CallbackContext) -> int:
+    context.user_data['backstage_account'] = update.message.text
+    await update.message.reply_text("请输入后台密码:")
+    return PRODUCTION_BACKSTAGE_PASSWORD
     
-async def input_production_backstage(update: Update, context: CallbackContext) -> int:
-    backstage = update.message.text
-    context.user_data['backstage'] = backstage
-
+async def input_production_backstage_password(update: Update, context: CallbackContext) -> int:
+    context.user_data['backstage_password'] = update.message.text
     await update.message.reply_text("请输入备注信息:")
-
     return PRODUCTION_REMARK
 
 
@@ -600,7 +613,11 @@ productions_conv_handler = ConversationHandler(
         PRODUCTION_QUOTA: [MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_quota)],
         PRODUCTION_PRINCIPAL: [CallbackQueryHandler(principal_button_callback)],
         PRODUCTION_START_DATE: [MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_start_date)],
-        PRODUCTION_BACKSTAGE: [MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_backstage)],
+        PRODUCTION_BACKSTAGE_LINK: [MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_backstage_link)],
+        PRODUCTION_BACKSTAGE_ACCOUNT: [
+            MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_backstage_account)],
+        PRODUCTION_BACKSTAGE_PASSWORD: [
+            MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_backstage_password)],
         PRODUCTION_REMARK: [MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_remark)],
         PRODUCTION_BUSINESS_ACCOUNT: [MessageHandler(filters.TEXT & ~filters.COMMAND, input_production_business_account)],
         SAVE_PRODUCTION: [MessageHandler(filters.TEXT & ~filters.COMMAND, save_production)],
