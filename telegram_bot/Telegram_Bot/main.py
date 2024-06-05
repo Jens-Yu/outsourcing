@@ -1,4 +1,5 @@
-from production import productions_conv_handler, list_productions_by_groupid, settle_conv_handler, balance_conv_handler
+from production import productions_conv_handler, list_productions_by_groupid, settle_conv_handler, \
+    balance_conv_handler, view_logs_handler
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram import __version__ as TG_VER
 from typing import Final
@@ -140,6 +141,7 @@ def main() -> None:
     application.add_handler(productions_conv_handler)
     application.add_handler(settle_conv_handler)
     application.add_handler(balance_conv_handler)
+    application.add_handler(view_logs_handler)
     application.run_polling()
 
 if __name__ == '__main__':
